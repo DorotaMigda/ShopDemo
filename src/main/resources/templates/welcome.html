@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>SHOP</title>
+
+	<!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link th:href="@{/style.css}" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #E6F3FF;
+        }
+        
+        .btn-primary {
+            background-color: blue;
+            color: #fff;
+        }
+        
+        .card.product-item {
+            border: 2px solid navy;
+        }
+    </style>
+</head>
+<body>
+	<h2 class="row justify-content-center py-3 px-xl-4">WELCOME TO OUR SHOP</h2>
+
+    <div class="row justify-content-center py-3 px-xl-5">
+        <div class="col-lg-6 col-6 text-left">
+            <form method="get" th:action="@{searchProductsByNameContaining}">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="name" placeholder="Search for products" required>
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary">
+	                        <span class="input-group-text bg-transparent text-primary">
+	                            <i class="fa fa-search"></i>
+	                        </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="col-auto row justify-content-center">
+        <a th:href="@{toLogin}" ><button type="submit" class="btn btn-primary mb-3">Login</button></a>
+    </div>
+    
+    <br>
+    
+    <div class="col-auto row justify-content-center">
+        <a th:href="@{toRegister}"><button type="submit" class="btn btn-primary mb-3">Register</button></a>
+    </div>
+	
+	<br>	
+	<hr>
+    
+    <div class="container-fluid pt-5">
+    <div class="text-center mb-4">
+        <h2>Products</h2>
+    </div>
+    <div class="row justify-content-center px-xl-5 pb-3">
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1" th:each="product : ${allProducts}">
+            <div class="card product-item border-0 mb-4">
+                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                    <a th:href="@{infoProduct(id=${product.id})}">
+                        <img class="img-fluid w-100 justify-content-center" src="https://placehold.jp/200x200.png" alt="">
+                    </a>
+                </div>
+                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                    <h6 class="text-truncate mb-3" th:text="${product.name}"></h6>
+                    <div class="d-flex justify-content-center">
+                        <h6 th:text="${product.price}"></h6><h6 class="text-muted ml-2"></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+
+
+
+
+
+   
+
+</body>
+</html>
+                    

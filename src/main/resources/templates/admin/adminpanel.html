@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>AdminPanel</title>
+
+<style>
+    body {
+        background-color: #F0F0F0;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    h2 {
+        margin-bottom: 20px;
+    }
+    
+    .admin-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .admin-panel a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 100px;
+        margin-bottom: 20px;
+        font-size: 24px;
+        background-color: #3399FF;
+        color: #FFF;
+        text-decoration: none;
+        border-radius: 10px;
+    }
+</style>
+</head>
+<body>
+    <div class="admin-panel">
+        <h2>Admin Panel</h2>
+        <a href="allUsers">User Manager</a>
+        <a href="allProductsAdmin">Product Manager</a>
+        <a href="orderManager">Order Manager</a>
+    </div>
+</body>
+</html>

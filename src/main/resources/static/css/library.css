@@ -1,0 +1,17 @@
+@charset "ISO-8859-1";
+* {
+	padding: 0.5%;
+}
+
+hr {
+	padding: 0;
+}
+
+.navbar {
+	background: darkgrey;
+}
+
+body {
+	width: 90%;
+	margin: auto;
+}
